@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/main-logo.jpg" type="image/x-icon">
+    <title>ST.Mark Nursery</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/86f4a8272e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="loader-logo">
+      <img src="images/main-logo.jpg" alt="Logo" class="pulse-logo">
+    </div>
+    <div class="loader-spinner">
+      <div class="spinner-ring"></div>
+      <div class="spinner-ring"></div>
+      <div class="spinner-ring"></div>
+    </div>
+    <h2 class="loader-text">St. Mark Nursery</h2>
+    <div class="loader-dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- navbar -->
+<div class="container">
+  <div class="d-flex align-items-center justify-content-between w-100" id="navbar">
+    
+    <!-- اللوجو + البراند نيم -->
+    <div class="d-flex align-items-center">
+      <img src="images/main-logo.jpg" alt="Logo" class="me-2 logo-img">
+      <span class="brand-name">St. Mark Nursery</span>
+    </div>
+
+    <!-- زرار الموبايل (جنب البراند نيم في الموبايل) -->
+    <button class="menu-toggle d-md-none" id="menu-toggle">☰</button>
+
+    <!-- اللينكات -->
+    <ul class="nav-links" id="nav-links">
+      <li class="nav-item">
+        <a class="nav-link active" href="#home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#programs">Our Programs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#gallery">Image Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact Us</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+  <!-- home-sec -->
+<section class="hero" id="home">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+
+      <div class="col-md-6">
+        <h1>Nurturing<br>Young Minds</h1>
+        <p>Discover the joy of learning at our nursery center.</p>
+      </div>
+      <div class="col-md-4 hero-images">
+        <div class="img-box">
+          <img src="images/home1.jpg" alt="child" class="img-rounded">
+        </div>
+        <div class="img-box">
+          <img src="images/home2.jpg" alt="child" class="img-hexagon">
+        </div>
+        <div class="img-box">
+          <img src="images/home3.jpg" alt="child" class="img-circle">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- programs-sec -->
+<section class="programs py-5" id="programs">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Educational Programs</h2>
+    <div class="row text-center">
+      
+      <!-- Preschool Program -->
+      <div class="col-md-4 mb-4">
+        <div class="program-box p-4 h-100">
+          <img src="images/book.png" alt="Preschool Icon" class="mb-3" style="width:60px; height:60px;">
+          <h5 class="fw-bold">Preschool Program</h5>
+          <p>
+            We emphasize literacy, numeracy, and social-emotional 
+            development through a variety of activities.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Toddler Program -->
+      <div class="col-md-4 mb-4">
+        <div class="program-box p-4 h-100">
+          <img src="images/cube.png" alt="Toddler Icon" class="mb-3" style="width:60px; height:60px;">
+          <h5 class="fw-bold">Toddler Program</h5>
+          <p>
+            We help toddlers explore their world, build relationships, 
+            and develop essential skills.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Enrichment Program -->
+      <div class="col-md-4 mb-4">
+        <div class="program-box p-4 h-100">
+          <img src="images/coloring-tool.png" alt="Enrichment Icon" class="mb-3" style="width:60px; height:60px;">
+          <h5 class="fw-bold">Enrichment Programs</h5>
+          <p>
+            We offer a variety of enrichment activities to enhance 
+            your child's learning experience.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Image Slider Section -->
+<section class="slider-section" id="gallery">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Image Gallery</h2>
+    <div class="slider-container">
+      
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <div class="slide-image-wrapper">
+          <img src="images/home1.jpg" alt="Learning Environment" class="slide-image">
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Welcome to Our Nursery</h2>
+          <p class="slide-description">Where young minds grow and flourish in a nurturing environment filled with love and learning.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="slide-image-wrapper">
+          <img src="images/home2.jpg" alt="Quality Education" class="slide-image">
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Quality Education</h2>
+          <p class="slide-description">Providing exceptional early childhood education with experienced teachers and modern facilities.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <div class="slide-image-wrapper">
+          <img src="images/home3.jpg" alt="Creative Learning" class="slide-image">
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Creative Learning</h2>
+          <p class="slide-description">Encouraging creativity and imagination through play-based learning and interactive activities.</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide">
+        <div class="slide-image-wrapper">
+          <img src="images/cover4.jpg" alt="Safe Environment" class="slide-image">
+        </div>
+        <div class="slide-content">
+          <h2 class="slide-title">Safe Environment</h2>
+          <p class="slide-description">A secure and caring space where children can explore, learn, and develop their full potential.</p>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="slider-btn prev-btn" aria-label="Previous Slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="slider-btn next-btn" aria-label="Next Slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Pagination Dots -->
+      <div class="slider-pagination">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+<!-- Footer -->
+ <footer id="contact">
+        <div class="container">
+            <div class="about">
+                <div class="logo">
+                    <img src="images/main-logo.jpg" alt="">
+                    <h2>St. Mark Nursery</h2>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis</p>
+                <h3>Social Media</h3>
+                <ul class="social-media">
+                    <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></i></a>
+                    </li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="branch1">
+                <div class="branch1-info">
+                    <h3>Branch 1</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, eos!</p>
+                    <div class="contact-details">
+                <h3>Get&nbsp;in&nbsp;Touch</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> <a>A108 Adam Street, New York, NY
+                            535022</a>
+                    </li>
+                    <li><i class="fa-solid fa-envelope"></i> <a
+                            href="mailto:contact@example.com">contact@example.com</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="tel:+1 5589 55488 55">+1 5589 55488 55</a></li>
+                </ul>
+            </div>
+                    </div>
+                </div>
+                
+            <div class="branch2">
+  <div class="branch2-info">
+    <h3>Branch 2</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, velit!</p>
+    <div class="contact-details ">
+      <h3 class="no-wrap">Get&nbsp;in&nbsp;Touch</h3>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i> <a>20 Main Street, Cairo, Egypt</a></li>
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:branch2@example.com">branch2@example.com</a></li>
+        <li><i class="fa-solid fa-phone"></i> <a href="tel:+20 111 222 3333">+20 111 222 3333</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+    </footer>
+    
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom Scripts -->
+<script src="js/script.js"></script>
+<script src="js/slider.js"></script>
+
+</body>
+</html>
