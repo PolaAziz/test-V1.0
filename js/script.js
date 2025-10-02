@@ -111,19 +111,73 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   // Gallery section
-  const galleryTitle = document.querySelector(".slider-section .section-title");
-  const sliderContainer = document.querySelector(".slider-container");
+  const galleryTitle = document.querySelector(".gallery-section .section-title");
+  const gallerySliderContainer = document.querySelector(".gallery-slider");
   
   if (galleryTitle) {
     galleryTitle.classList.add("fade-in-up");
     observer.observe(galleryTitle);
   }
   
-  if (sliderContainer) {
-    sliderContainer.classList.add("fade-in");
-    observer.observe(sliderContainer);
+  if (gallerySliderContainer) {
+    gallerySliderContainer.classList.add("fade-in");
+    observer.observe(gallerySliderContainer);
   }
   
+  // Admission section animations
+  const admissionSection = document.getElementById("admission");
+  if (admissionSection) {
+    const admissionTitle = admissionSection.querySelector(".section-title");
+    const admissionSubtitle = admissionSection.querySelector(".section-subtitle");
+    const leftLogo = admissionSection.querySelector(".fade-in-left");
+    const rightLogo = admissionSection.querySelector(".fade-in-right");
+    const button = admissionSection.querySelector(".btn-admission");
+
+    [admissionTitle, admissionSubtitle, leftLogo, rightLogo, button]
+      .filter(Boolean)
+      .forEach(el => {
+        // Ensure base animation classes exist
+        if (!el.classList.contains("fade-in-up") && !el.classList.contains("fade-in-left") && !el.classList.contains("fade-in-right") && !el.classList.contains("fade-in")) {
+          el.classList.add("fade-in-up");
+        }
+        observer.observe(el);
+      });
+  }
+
+  // ====== ADMISSION POLICY MODAL ======
+  const openBtn = document.getElementById("openAdmissionPdf");
+  const modal = document.getElementById("pdfModal");
+  const modalBackdrop = document.getElementById("pdfBackdrop");
+  const closeBtn = document.getElementById("closePdfModal");
+
+  const openModal = () => {
+    if (!modal) return;
+    modal.classList.add("open");
+    document.body.classList.add("modal-open");
+    // Accessibility focus
+    if (closeBtn) {
+      closeBtn.focus({ preventScroll: true });
+    }
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.classList.remove("open");
+    document.body.classList.remove("modal-open");
+  };
+
+  if (openBtn) {
+    openBtn.addEventListener("click", openModal);
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && modal.classList.contains("open")) {
+      closeModal();
+    }
+  });
+
   // Footer
   const footerSections = document.querySelectorAll("footer > .container > div");
   footerSections.forEach((section, index) => {

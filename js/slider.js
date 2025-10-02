@@ -1,139 +1,169 @@
-// ========== IMAGE SLIDER FUNCTIONALITY ==========
+// ========== IMAGE GALLERY SLIDER FUNCTIONALITY ==========
 
-// Get all elements
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
+// Get all gallery elements
+const gallerySlides = document.querySelectorAll('.gallery-slide');
+const galleryDots = document.querySelectorAll('.gallery-dot');
+const prevGalleryBtn = document.querySelector('.prev-gallery-btn');
+const nextGalleryBtn = document.querySelector('.next-gallery-btn');
+const gallerySlider = document.querySelector('.gallery-slider');
 
-let currentSlide = 0;
-let slideInterval;
+let currentGallerySlide = 0;
+let galleryInterval;
+let isGalleryTransitioning = false;
 
-// Function to show specific slide
-function showSlide(index) {
+// Function to show specific gallery slide
+function showGallerySlide(index) {
+    if (isGalleryTransitioning) return;
+    
+    isGalleryTransitioning = true;
+    
     // Remove active class from all slides and dots
-    slides.forEach(slide => {
+    gallerySlides.forEach(slide => {
         slide.classList.remove('active');
     });
-    dots.forEach(dot => {
+    galleryDots.forEach(dot => {
         dot.classList.remove('active');
     });
     
     // Handle wrap around
-    if (index >= slides.length) {
-        currentSlide = 0;
+    if (index >= gallerySlides.length) {
+        currentGallerySlide = 0;
     } else if (index < 0) {
-        currentSlide = slides.length - 1;
+        currentGallerySlide = gallerySlides.length - 1;
     } else {
-        currentSlide = index;
+        currentGallerySlide = index;
     }
     
     // Add active class to current slide and dot
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+    gallerySlides[currentGallerySlide].classList.add('active');
+    galleryDots[currentGallerySlide].classList.add('active');
+    
+    // Reset transition lock after animation completes
+    setTimeout(() => {
+        isGalleryTransitioning = false;
+    }, 1000);
 }
 
 // Function to go to next slide
-function nextSlide() {
-    showSlide(currentSlide + 1);
+function nextGallerySlide() {
+    showGallerySlide(currentGallerySlide + 1);
 }
 
 // Function to go to previous slide
-function prevSlide() {
-    showSlide(currentSlide - 1);
+function prevGallerySlide() {
+    showGallerySlide(currentGallerySlide - 1);
 }
 
-// Auto play slider
-function startAutoPlay() {
-    slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+// Auto play gallery slider
+function startGalleryAutoPlay() {
+    galleryInterval = setInterval(nextGallerySlide, 4500); // Change slide every 4.5 seconds
 }
 
 // Stop auto play
-function stopAutoPlay() {
-    clearInterval(slideInterval);
+function stopGalleryAutoPlay() {
+    clearInterval(galleryInterval);
 }
 
 // Event listeners for navigation buttons
-prevBtn.addEventListener('click', () => {
-    prevSlide();
-    stopAutoPlay();
-    startAutoPlay(); // Restart auto play after manual navigation
-});
+if (prevGalleryBtn) {
+    prevGalleryBtn.addEventListener('click', () => {
+        prevGallerySlide();
+        stopGalleryAutoPlay();
+        startGalleryAutoPlay(); // Restart auto play after manual navigation
+    });
+}
 
-nextBtn.addEventListener('click', () => {
-    nextSlide();
-    stopAutoPlay();
-    startAutoPlay();
-});
+if (nextGalleryBtn) {
+    nextGalleryBtn.addEventListener('click', () => {
+        nextGallerySlide();
+        stopGalleryAutoPlay();
+        startGalleryAutoPlay();
+    });
+}
 
 // Event listeners for pagination dots
-dots.forEach((dot, index) => {
+galleryDots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        showSlide(index);
-        stopAutoPlay();
-        startAutoPlay();
+        showGallerySlide(index);
+        stopGalleryAutoPlay();
+        startGalleryAutoPlay();
     });
 });
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        prevSlide();
-        stopAutoPlay();
-        startAutoPlay();
-    } else if (e.key === 'ArrowRight') {
-        nextSlide();
-        stopAutoPlay();
-        startAutoPlay();
+    // Only respond to arrow keys when gallery is in viewport
+    const gallerySection = document.querySelector('.gallery-section');
+    if (!gallerySection) return;
+    
+    const rect = gallerySection.getBoundingClientRect();
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+    
+    if (isInViewport) {
+        if (e.key === 'ArrowLeft') {
+            prevGallerySlide();
+            stopGalleryAutoPlay();
+            startGalleryAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextGallerySlide();
+            stopGalleryAutoPlay();
+            startGalleryAutoPlay();
+        }
     }
 });
 
 // Touch/Swipe support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
+let galleryTouchStartX = 0;
+let galleryTouchEndX = 0;
 
-const sliderContainer = document.querySelector('.slider-container');
+if (gallerySlider) {
+    gallerySlider.addEventListener('touchstart', (e) => {
+        galleryTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
 
-sliderContainer.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
+    gallerySlider.addEventListener('touchend', (e) => {
+        galleryTouchEndX = e.changedTouches[0].screenX;
+        handleGallerySwipe();
+    }, { passive: true });
+}
 
-sliderContainer.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, { passive: true });
-
-function handleSwipe() {
-    const swipeThreshold = 50;
+function handleGallerySwipe() {
+    const swipeThreshold = 60;
     
-    if (touchEndX < touchStartX - swipeThreshold) {
+    if (galleryTouchEndX < galleryTouchStartX - swipeThreshold) {
         // Swipe left - next slide
-        nextSlide();
-        stopAutoPlay();
-        startAutoPlay();
+        nextGallerySlide();
+        stopGalleryAutoPlay();
+        startGalleryAutoPlay();
     }
     
-    if (touchEndX > touchStartX + swipeThreshold) {
+    if (galleryTouchEndX > galleryTouchStartX + swipeThreshold) {
         // Swipe right - previous slide
-        prevSlide();
-        stopAutoPlay();
-        startAutoPlay();
+        prevGallerySlide();
+        stopGalleryAutoPlay();
+        startGalleryAutoPlay();
     }
 }
 
 // Pause auto play when mouse is over slider
-sliderContainer.addEventListener('mouseenter', stopAutoPlay);
-sliderContainer.addEventListener('mouseleave', startAutoPlay);
+if (gallerySlider) {
+    gallerySlider.addEventListener('mouseenter', stopGalleryAutoPlay);
+    gallerySlider.addEventListener('mouseleave', startGalleryAutoPlay);
+}
 
-// Initialize slider
-showSlide(0);
-startAutoPlay();
+// Initialize gallery slider
+if (gallerySlides.length > 0) {
+    showGallerySlide(0);
+    startGalleryAutoPlay();
+}
 
 // Pause slider when page is not visible
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        stopAutoPlay();
+        stopGalleryAutoPlay();
     } else {
-        startAutoPlay();
+        if (gallerySlides.length > 0) {
+            startGalleryAutoPlay();
+        }
     }
 });

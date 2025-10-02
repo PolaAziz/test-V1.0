@@ -1,0 +1,36 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="40" cy="40" r="38" fill="#E3F2FD" stroke="#42A5F5" stroke-width="2"/>
+  
+  <!-- Building Blocks Stack -->
+  <!-- Bottom Block -->
+  <g>
+    <rect x="28" y="45" width="14" height="14" rx="2" fill="#FF6B9D" stroke="#E91E63" stroke-width="1.5"/>
+    <circle cx="35" cy="52" r="2" fill="white" opacity="0.7"/>
+  </g>
+  
+  <!-- Middle Block -->
+  <g>
+    <rect x="33" y="32" width="14" height="14" rx="2" fill="#FFB74D" stroke="#F57C00" stroke-width="1.5"/>
+    <rect x="36" y="35" width="3" height="3" fill="white" opacity="0.7"/>
+    <rect x="42" y="35" width="3" height="3" fill="white" opacity="0.7"/>
+    <rect x="36" y="41" width="3" height="3" fill="white" opacity="0.7"/>
+    <rect x="42" y="41" width="3" height="3" fill="white" opacity="0.7"/>
+  </g>
+  
+  <!-- Top Block -->
+  <g>
+    <rect x="38" y="19" width="14" height="14" rx="2" fill="#42A5F5" stroke="#1976D2" stroke-width="1.5"/>
+    <path d="M42 23L45 26L48 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="45" cy="29" r="1.5" fill="white"/>
+  </g>
+  
+  <!-- Sparkles -->
+  <circle cx="24" cy="35" r="2" fill="#FFD700"/>
+  <circle cx="56" cy="28" r="2" fill="#FFD700"/>
+  <circle cx="54" cy="48" r="2" fill="#FFD700"/>
+  
+  <!-- Small stars -->
+  <path d="M22 48L22.5 49.5L24 50L22.5 50.5L22 52L21.5 50.5L20 50L21.5 49.5L22 48Z" fill="#FF6B9D"/>
+  <path d="M58 40L58.5 41.5L60 42L58.5 42.5L58 44L57.5 42.5L56 42L57.5 41.5L58 40Z" fill="#42A5F5"/>
+</svg>
