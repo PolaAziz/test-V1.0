@@ -63,6 +63,9 @@
         <a class="nav-link" href="#gallery">Image Gallery</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="#admission">Admission</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#contact">Contact Us</a>
       </li>
     </ul>
@@ -103,7 +106,7 @@
       <!-- Preschool Program -->
       <div class="col-md-4 mb-4">
         <div class="program-box p-4 h-100">
-          <img src="images/book.png" alt="Preschool Icon" class="mb-3" style="width:60px; height:60px;">
+          <img src="images/preschool-icon.svg" alt="Preschool Icon" class="mb-3" style="width:80px; height:80px;">
           <h5 class="fw-bold">Preschool Program</h5>
           <p>
             We emphasize literacy, numeracy, and social-emotional 
@@ -115,7 +118,7 @@
       <!-- Toddler Program -->
       <div class="col-md-4 mb-4">
         <div class="program-box p-4 h-100">
-          <img src="images/cube.png" alt="Toddler Icon" class="mb-3" style="width:60px; height:60px;">
+          <img src="images/toddler-icon.svg" alt="Toddler Icon" class="mb-3" style="width:80px; height:80px;">
           <h5 class="fw-bold">Toddler Program</h5>
           <p>
             We help toddlers explore their world, build relationships, 
@@ -127,7 +130,7 @@
       <!-- Enrichment Program -->
       <div class="col-md-4 mb-4">
         <div class="program-box p-4 h-100">
-          <img src="images/coloring-tool.png" alt="Enrichment Icon" class="mb-3" style="width:60px; height:60px;">
+          <img src="images/enrichment-icon.svg" alt="Enrichment Icon" class="mb-3" style="width:80px; height:80px;">
           <h5 class="fw-bold">Enrichment Programs</h5>
           <p>
             We offer a variety of enrichment activities to enhance 
@@ -140,74 +143,273 @@
   </div>
 </section>
 
-<!-- Image Slider Section -->
-<section class="slider-section" id="gallery">
+<!-- Admission Section -->
+<section class="admission-section py-5" id="admission">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-12 text-center">
+        <h2 class="section-title fw-bold mb-3">Admission</h2>
+        <p class="section-subtitle mb-4">Learn about our admission policy and requirements. Review the full PDF inside a pop-out window.</p>
+      </div>
+
+      <div class="col-md-5 text-center fade-in-left">
+        <img src="images/main-logo.jpg" alt="Primary Logo" class="admission-logo primary-logo">
+      </div>
+      <div class="col-md-2 d-none d-md-block text-center">
+        <span class="logo-divider"></span>
+      </div>
+      <div class="col-md-5 text-center fade-in-right">
+        <img src="images/second-logo.jpg" alt="Secondary Logo" class="admission-logo secondary-logo">
+      </div>
+
+      <div class="col-12 text-center mt-4">
+        <button class="btn-admission fade-in-up" id="openAdmissionPdf">
+          <i class="fa-solid fa-file-lines me-2"></i> View Admission Policy
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Admission Policy Modal -->
+<div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog">
+  <div class="pdf-modal__backdrop" id="pdfBackdrop"></div>
+  <div class="pdf-modal__dialog" role="document" aria-modal="true">
+    <button class="pdf-modal__close" id="closePdfModal" aria-label="Close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="pdf-modal__body">
+      <!-- Modal Header with Logos -->
+      <div class="modal-header-logos">
+        <img src="images/main-logo.jpg" alt="Main Logo" class="modal-logo">
+        <img src="images/second-logo.jpg" alt="Second Logo" class="modal-logo">
+      </div>
+      
+      <!-- Scrollable Content -->
+      <div class="modal-content-scroll">
+        <h2 class="policy-title">Nursery Policy & Parent Guidelines</h2>
+        <p class="policy-subtitle">(September 2025 – September 2026)</p>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-clipboard-list"></i> 1. Registration</h3>
+          <ul>
+            <li>Parents must fill in an application form from the nursery administration.</li>
+            <li><strong>Application fee:</strong>
+              <ul>
+                <li>Languages section: 160 EGP</li>
+              </ul>
+            </li>
+            <li><strong>Required documents after acceptance:</strong>
+              <ul>
+                <li>Copy of the child's birth certificate</li>
+                <li>Copy of baptism certificate</li>
+                <li>2 personal photos of the child</li>
+                <li>Copy of mother's ID and father's ID</li>
+                <li>Photo of the person authorized to pick up the child</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-money-bill-wave"></i> 2. Monthly Fees</h3>
+          <ul>
+            <li><strong>Languages section:</strong> 950 EGP per month (without meals)</li>
+            <li><strong>Meals (optional):</strong> +700 EGP per month</li>
+            <li><strong>Arabic section:</strong> 600 EGP per month (without meals)</li>
+            <li><strong>Meals (optional):</strong> +500 EGP per month</li>
+            <li>Meals program is supervised by Dr. Irene Halim (Nutrition Specialist) and includes breakfast + lunch.</li>
+            <li>Meals must be paid before the 25th of the previous month.</li>
+            <li>Meal prices are reviewed every 3 months.</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-calendar-check"></i> 3. Reservation and Discounts</h3>
+          <ul>
+            <li>To reserve a child's place during absence: pay 50% of the monthly fee.</li>
+            <li>If no reservation is paid, the child loses the place and must re-apply.</li>
+            <li>If the child is absent for more than 2 months, they will be placed on a waiting list.</li>
+            <li><strong>Sibling discount:</strong> 10% for the second child (applies only to the basic fee).</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-house-user"></i> 4. Hosting Service</h3>
+          <ul>
+            <li><strong>Hosting during nursery hours:</strong>
+              <ul>
+                <li>Without meal: 45 EGP/day</li>
+                <li>With meal: 85 EGP/day</li>
+              </ul>
+            </li>
+            <li><strong>Extra hours:</strong> 30 EGP per hour</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-clock"></i> 5. Late Pickup Penalties</h3>
+          <ul>
+            <li>15 minutes late: 30 EGP</li>
+            <li>30 minutes late: 40 EGP</li>
+            <li>45 minutes late: 50 EGP</li>
+            <li>1 hour late: 60 EGP</li>
+            <li>Fines increase if lateness is repeated.</li>
+            <li><strong>Please respect nursery official timings.</strong></li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-utensils"></i> 6. Meal Times</h3>
+          <ul>
+            <li><strong>Breakfast:</strong> 9:30 – 10:00 am</li>
+            <li><strong>Lunch:</strong> 1:00 – 1:30 pm</li>
+            <li>If a child comes after 10:00 am, breakfast will not be served. Please make sure your child eats at home if late.</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-comments"></i> 7. Communication Policy</h3>
+          <ul>
+            <li>Daily notes will be written in the follow-up notebook sent with the child.</li>
+            <li><strong>For complaints or questions:</strong> contact nursery administration only (WhatsApp: 01118040781).</li>
+            <li>Parents should not contact teachers or staff directly. Communication is only with the branch manager.</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-heart-pulse"></i> 8. Health Policy</h3>
+          <ul>
+            <li>Sick children will not be allowed in nursery for the safety of others.</li>
+            <li>Children with infectious diseases may return only with a doctor's medical report.</li>
+            <li>If a child is sick for more than 2 days, a medical report is required.</li>
+            <li>Parents must inform the nursery in writing of any allergies or chronic illnesses.</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-chart-line"></i> 9. Reports and Follow-up</h3>
+          <ul>
+            <li>Daily report about the child's activities.</li>
+            <li>Progress report (behavioral and educational) every 2 months.</li>
+            <li>Parents should read and follow up on all notes.</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3><i class="fa-solid fa-list-check"></i> 10. General Rules</h3>
+          <ul>
+            <li>Children must wear the nursery uniform (except Tuesday – casual clothes allowed).</li>
+            <li>Parents must inform the nursery in case of travel or long absence.</li>
+            <li>Please take care of books and notebooks.</li>
+            <li><strong>Bring healthy food only for children not joining the meal program:</strong>
+              <ul>
+                <li><strong>Allowed:</strong> fruits, plain biscuits, milk</li>
+                <li><strong>Not allowed:</strong> sweets, candy</li>
+              </ul>
+            </li>
+            <li><strong>Hygiene:</strong>
+              <ul>
+                <li>Cut nails regularly</li>
+                <li>Keep hair clean</li>
+                <li>Wash food box and water bottle daily</li>
+              </ul>
+            </li>
+            <li>Reduce screen time (TV/phone) at home.</li>
+            <li><strong>Parents must provide monthly supplies:</strong>
+              <ul>
+                <li>Tissue box</li>
+                <li>Wet wipes</li>
+                <li>Towel with the child's name</li>
+                <li>Crocs for indoor use</li>
+                <li>Change of clothes with name</li>
+                <li>Personal cup</li>
+                <li>Hair brush</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="policy-section contacts-section">
+          <h3><i class="fa-solid fa-phone"></i> Contacts</h3>
+          <ul>
+            <li><strong>Church Branch (Languages Section):</strong> <a href="tel:21932211">21932211</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image Gallery Section -->
+<section class="gallery-section" id="gallery">
   <div class="container">
     <h2 class="section-title text-center mb-5">Image Gallery</h2>
-    <div class="slider-container">
-      
-      <!-- Slide 1 -->
-      <div class="slide active">
-        <div class="slide-image-wrapper">
-          <img src="images/home1.jpg" alt="Learning Environment" class="slide-image">
+    
+    <div class="gallery-slider">
+      <!-- Slider Wrapper -->
+      <div class="slider-wrapper">
+        
+        <!-- Slide 1 -->
+        <div class="gallery-slide active">
+          <div class="slide-image-container">
+            <img src="images/home1.jpg" alt="Learning Environment" class="gallery-image">
+          </div>
+          <div class="slide-info">
+            <h3 class="slide-heading">Welcome to Our Nursery</h3>
+            <p class="slide-text">Where young minds grow and flourish in a nurturing environment filled with love and learning.</p>
+          </div>
         </div>
-        <div class="slide-content">
-          <h2 class="slide-title">Welcome to Our Nursery</h2>
-          <p class="slide-description">Where young minds grow and flourish in a nurturing environment filled with love and learning.</p>
-        </div>
-      </div>
 
-      <!-- Slide 2 -->
-      <div class="slide">
-        <div class="slide-image-wrapper">
-          <img src="images/home2.jpg" alt="Quality Education" class="slide-image">
+        <!-- Slide 2 -->
+        <div class="gallery-slide">
+          <div class="slide-image-container">
+            <img src="images/home2.jpg" alt="Quality Education" class="gallery-image">
+          </div>
+          <div class="slide-info">
+            <h3 class="slide-heading">Quality Education</h3>
+            <p class="slide-text">Providing exceptional early childhood education with experienced teachers and modern facilities.</p>
+          </div>
         </div>
-        <div class="slide-content">
-          <h2 class="slide-title">Quality Education</h2>
-          <p class="slide-description">Providing exceptional early childhood education with experienced teachers and modern facilities.</p>
-        </div>
-      </div>
 
-      <!-- Slide 3 -->
-      <div class="slide">
-        <div class="slide-image-wrapper">
-          <img src="images/home3.jpg" alt="Creative Learning" class="slide-image">
+        <!-- Slide 3 -->
+        <div class="gallery-slide">
+          <div class="slide-image-container">
+            <img src="images/home3.jpg" alt="Creative Learning" class="gallery-image">
+          </div>
+          <div class="slide-info">
+            <h3 class="slide-heading">Creative Learning</h3>
+            <p class="slide-text">Encouraging creativity and imagination through play-based learning and interactive activities.</p>
+          </div>
         </div>
-        <div class="slide-content">
-          <h2 class="slide-title">Creative Learning</h2>
-          <p class="slide-description">Encouraging creativity and imagination through play-based learning and interactive activities.</p>
-        </div>
-      </div>
 
-      <!-- Slide 4 -->
-      <div class="slide">
-        <div class="slide-image-wrapper">
-          <img src="images/cover4.jpg" alt="Safe Environment" class="slide-image">
+        <!-- Slide 4 -->
+        <div class="gallery-slide">
+          <div class="slide-image-container">
+            <img src="images/cover4.jpg" alt="Safe Environment" class="gallery-image">
+          </div>
+          <div class="slide-info">
+            <h3 class="slide-heading">Safe Environment</h3>
+            <p class="slide-text">A secure and caring space where children can explore, learn, and develop their full potential.</p>
+          </div>
         </div>
-        <div class="slide-content">
-          <h2 class="slide-title">Safe Environment</h2>
-          <p class="slide-description">A secure and caring space where children can explore, learn, and develop their full potential.</p>
-        </div>
+
       </div>
 
       <!-- Navigation Arrows -->
-      <button class="slider-btn prev-btn" aria-label="Previous Slide">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
+      <button class="gallery-nav-btn prev-gallery-btn" aria-label="Previous">
+        <i class="fa-solid fa-chevron-left"></i>
       </button>
-      <button class="slider-btn next-btn" aria-label="Next Slide">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
+      <button class="gallery-nav-btn next-gallery-btn" aria-label="Next">
+        <i class="fa-solid fa-chevron-right"></i>
       </button>
 
-      <!-- Pagination Dots -->
-      <div class="slider-pagination">
-        <span class="dot active" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
-        <span class="dot" data-slide="3"></span>
+      <!-- Dots Indicator -->
+      <div class="gallery-dots">
+        <span class="gallery-dot active" data-index="0"></span>
+        <span class="gallery-dot" data-index="1"></span>
+        <span class="gallery-dot" data-index="2"></span>
+        <span class="gallery-dot" data-index="3"></span>
       </div>
 
     </div>
@@ -232,13 +434,8 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis</p>
                 <h3>Social Media</h3>
                 <ul class="social-media">
-                    <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></i></a>
-                    </li>
-                    <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    </li>
-                    <li><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
+                    <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
                 </ul>
             </div>
             <div class="branch1">
